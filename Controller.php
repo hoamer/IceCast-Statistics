@@ -154,7 +154,10 @@ class Controller extends \Piwik\Plugin\Controller
 		if($settings->displayButtonUserAgent->getValue()){
                 	$returnValue .= "<div id='container'>"."<div id='value'>"."<div id='inner'>".$output['user_agent']."</div>"."</div>"."<div id='description'>User Agent</div>"."</div>";
 	        }
-                
+                if(empty($returnValue)){
+                        $returnValue .= "please acitvate the informations you want to display under 'Personal Settings' -> 'Plugin Settings'.";
+                }
+
                 if ($autoRefresh == 1) {
                         $returnValue .= "<SCRIPT LANGUAGE='javascript'>
                             var reloadLiveLoad;
