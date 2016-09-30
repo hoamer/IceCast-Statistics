@@ -39,8 +39,14 @@ If you have further questions to the values, please visit the original IceCast d
 
 ## Documentation
 
-1. Login as superuser into your Piwik installation and activate the plugin under Settings -> Plugins
+1. Clone the plugin into the plugins directory of your Piwik installation.
 
-2. Activate the informations you want to display in your "Personal Settings" -> "Plugin settings".
+   ```
+   cd plugins/
+   git clone https://github.com/hoamer/IceCast-Statistics.git
+   ```
+2. Login as superuser into your Piwik installation and activate the plugin under Settings -> Plugins
 
-3. You will now find the widget under the Dashboard section.
+3. Activate the informations you want to display in your "Personal Settings" -> "Plugin settings".
+
+4. You will now find the widget under the Dashboard section.
