@@ -1,0 +1,29 @@
+{
+  "name": "IcecastStatistics",
+  "version": "0.9.9",
+  "description": "Live Plugin to show various informations about your IceCast Server",
+  "theme": false,
+  "require": {
+    "piwik": ">=2.16.2"
+  },
+  "authors": [
+    {
+      "name": "Sebastian Neugebauer",
+      "email": "kontakt@sebastian-neugebauer.de",
+      "homepage": ""
+    }
+  ],
+  "support": {
+	    "email": "kontakt@sebastian-neugebauer.de",
+	    "issues": "",
+	    "forum": "",
+	    "irc": "",
+	    "wiki": "",
+	    "source": "",
+	    "docs": "",
+	    "rss": ""
+  },
+  "homepage": "",
+  "license": "GPL v3+",
+  "keywords": ["IceCast Statistics","Icecast","radio","stream","streaming"]
+}

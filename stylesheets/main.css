@@ -1,0 +1,31 @@
+#container{
+	float: left; 
+	width: 175px;
+	margin: 10px 10px 10px 10px;
+}
+
+#value{
+	background-color:#eee;
+	min-height:110px;
+	width:140px;
+	display:block;
+	margin: 0px;
+	margin-left: 10%;
+	padding: 0px 10px 0px 10px;
+	padding-top:10%;
+	text-align:center;
+	font-weight:bold;
+	font-size: 16px;
+	word-wrap:break-word;
+	vertical-align:middle;
+	border-radius: 25px;
+}
+
+#description{
+	text-align:center;
+	font-size: 12px;
+}
+
+#inner{
+	padding-bottom:10%;
+}
