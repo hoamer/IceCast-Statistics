@@ -5,7 +5,7 @@
 This is a plugin for the Open Source Web Analytics platform Piwik. If enabled, it will add an widgets that you can add to your dashboard.
 The widget will show various information about your IceCast Server-Mountpoint. You can choose which information are displayed in the widget by activating them in your "Personal Settings" -> "Plugin Settings".
 
-The initial idea was to display the current played title and acutally connected listeners.
+The initial idea was to display the current played title and acutally connected listeners. This was made for an friend www.technoac.de
 
 Please fill the user credentials and hostname of the IceCast server in the "Administrator Settings" -> "Plugin Settings".
 You can activate and set an refresh interval in your "Personal Settings" -> "Plugin Settings".
