@@ -5,12 +5,14 @@
 This is a plugin for the Open Source Web Analytics platform Piwik. If enabled, it will add an widgets that you can add to your dashboard.
 The widget will show various information about your IceCast Server-Mountpoint. You can choose which information are displayed in the widget by activating them in your "Personal Settings" -> "Plugin Settings".
 
-Before this plugin will display informations about your mountpoint, fill the user credentials and hostname of the IceCast server in the "Administrator Settings" -> "Plugin Settings".
-You can activate set an refresh interval in your "Personal Settings" -> "Plugin Settings".
-
 The initial idea was to display the current played title and acutally connected listeners.
 
-You can display the following informations by activating them in your "Personal Settings":
+Please fill the user credentials and hostname of the IceCast server in the "Administrator Settings" -> "Plugin Settings".
+You can activate and set an refresh interval in your "Personal Settings" -> "Plugin Settings".
+
+Before this plugin will display informations about your mountpoint, you have toactivate them.
+
+You can display the following informations by activating them as described:
 
 	- Combined audio informations
 	- Bitrate
@@ -39,8 +41,20 @@ If you have further questions to the values, please visit the original IceCast d
 
 ## Documentation
 
+0. [To place the plugin manually from github repository]: 
+	Clone the plugin into the plugins directory of your Piwik installation.
+
+	```
+	cd plugins/
+	git clone https://github.com/hoamer/IceCast-Statistics.git IcecastStatistics
+	```
+
 1. Login as superuser into your Piwik installation and activate the plugin under Settings -> Plugins
 
 2. Activate the informations you want to display in your "Personal Settings" -> "Plugin settings".
 
 3. You will now find the widget under the Dashboard section.
+
+4. Please fill the user credentials and hostname of the IceCast server in the "Administrator Settings" -> "Plugin Settings".
+
+5. Before this plugin will display informations about your mountpoint, fill the user credentials and hostname of the IceCast server Before this plugin will display informations about your mountpoint, fill the user credentials and hostname of the IceCast server in the "Administrator Settings" -> "Plugin Settings".
