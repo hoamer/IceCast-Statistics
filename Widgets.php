@@ -25,7 +25,7 @@ class Widgets extends \Piwik\Plugin\Widgets
      * your own category.
      * @var string
      */
-    protected $category = 'Listeners';
+    protected $category = 'IceCast';
 
     /**
      * Here you can add one or multiple widgets. You can add a widget by calling the method "addWidget()" and pass the
