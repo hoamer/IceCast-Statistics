@@ -1,6 +1,6 @@
 {
     "name": "IcecastStatistics",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Live Plugin to show various informations about your IceCast Server",
     "theme": false,
     "require": {
