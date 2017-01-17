@@ -58,3 +58,10 @@ If you have further questions to the values, please visit the original IceCast d
 4. Please fill the user credentials and hostname of the IceCast server in the "Administrator Settings" -> "Plugin Settings".
 
 5. Before this plugin will display informations about your mountpoint, fill the user credentials and hostname of the IceCast server Before this plugin will display informations about your mountpoint, fill the user credentials and hostname of the IceCast server in the "Administrator Settings" -> "Plugin Settings".
+
+
+## Changelog
+
+1. Due to piwik changes the directory structure and files have changes. Please read the commits to see the changes
+
+2. Changed the Style of dislayed informations. It is now much more responsible and nicer integrated.
