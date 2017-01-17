@@ -1,5 +1,9 @@
 {
     "IcecastStatistics": {
         "Listeners": "Listeners"
+    },
+    "IceCastStatistics": {
+        "IceCast": "IceCast",
+        "IceCastStatistics": "IceCast Statistics"
     }
 }
