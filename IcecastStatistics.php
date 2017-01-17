@@ -6,18 +6,18 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
 
-namespace Piwik\Plugins\IcecastStatistics;
+namespace Piwik\Plugins\IceCastStatistics;
 
-class IcecastStatistics extends \Piwik\Plugin
+class IceCastStatistics extends \Piwik\Plugin
 {
-    public function registerEvents(){
+    /**public function registerEvents(){
         return array(
             'AssetManager.getStylesheetFiles' => 'getStylesheetFiles'
 	);
-    }
+    }**/
     
     public function getStylesheetFiles(&$stylesheets){
-    	$stylesheets[] = "plugins/IcecastStatistics/stylesheets/main.css";
+    	//$stylesheets[] = "plugins/IceCastStatistics/stylesheets/man.css";
     }
 
 }
