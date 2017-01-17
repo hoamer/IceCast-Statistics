@@ -89,7 +89,7 @@ class GetIceCastStatistics extends Widget
                     $returnValue .= "<tr><td>Currently Listeners</td><td>" . $output['listeners'] . "</td></tr>";
         }
         if($userSettings->displayButtonTitle->getValue()){
-                    $returnValue .= "<tr><td>Current Titel</td><td>" . $output['title'] . "</td></tr>";
+                    $returnValue .= "<tr><td>Current Title</td><td>" . $output['title'] . "</td></tr>";
         }
         if($userSettings->displayButtonAudioInfo->getValue()){
                     $returnValue .= "<tr><td>Combined Audio Info</td><td>" . $output['audio_info'] . "</td></tr>";
