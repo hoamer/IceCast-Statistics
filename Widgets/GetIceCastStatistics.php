@@ -86,7 +86,7 @@ class GetIceCastStatistics extends Widget
         $returnValue = "<table piwik-content-table><thead><tr><th>Description</th><th>Value</th></tr></thead><tbody>";
 
         if($userSettings->displayButtonCurrentlyListeners->getValue()){
-                    $returnValue .= "<tr><td>Currently Listeners</td><td>" . $output['listeners'] . "</td></tr>";
+                    $returnValue .= "<tr><td>Currently Listeners</td><td>" . $output['listeners']  . "</td></tr>";
         }
         if($userSettings->displayButtonTitle->getValue()){
                     $returnValue .= "<tr><td>Current Title</td><td>" . $output['title'] . "</td></tr>";
@@ -148,7 +148,7 @@ class GetIceCastStatistics extends Widget
         if($userSettings->displayButtonUserAgent->getValue()){
                     $returnValue .= "<tr><td>User agent</td><td>" . $output['user_agent'] . "</td></tr>";
         }
-        
+
         if(empty($returnValue)){
             $returnValue .= "please acitvate the informations you want to display under 'Personal Settings' -> 'Plugin Settings'.";
         }else{
