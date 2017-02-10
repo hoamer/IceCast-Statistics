@@ -149,8 +149,9 @@ class GetIceCastStatistics extends Widget
                     $returnValue .= "<tr><td>User agent</td><td>" . $output['user_agent'] . "</td></tr>";
         }
 
-        if(empty($returnValue)){
-            $returnValue .= "please acitvate the informations you want to display under 'Personal Settings' -> 'Plugin Settings'.";
+        if($returnValue == "<table piwik-content-table><thead><tr><th>Description</th><th>Value</th></tr></thead><tbody>"){
+            $returnValue .= "<tr><td>Please acitvate the informations you want to display under 'Personal Settings' -> 'Plugin Settings'</td><td>";
+	    $returnValue .= "<tr><td>You may also want to enable auto refreshing</td><td>";
         }else{
             $returnValue .= "</tbody> </table>";
         }
