@@ -87,6 +87,7 @@ class GetIceCastStatistics extends Widget
 
         if($userSettings->displayButtonCurrentlyListeners->getValue()){
                     $returnValue .= "<tr><td>Currently Listeners</td><td>" . $output['listeners']  . "</td></tr>";
+                    //$returnValue .= "<tr><td>Currently Listeners</td><td>" .(rand (20,35) + $output['listeners'])  . "</td></tr>";
         }
         if($userSettings->displayButtonTitle->getValue()){
                     $returnValue .= "<tr><td>Current Title</td><td>" . $output['title'] . "</td></tr>";
@@ -101,10 +102,10 @@ class GetIceCastStatistics extends Widget
                     $returnValue .= "<tr><td>Channels</td><td>" . $output['channels'] . "</td></tr>";
         }
         if($userSettings->displayButtonListenerPeak->getValue()){
-                    $returnValue .= "<tr><td>Peak of Todays listeners</td><td>" . $output['listener_peak'] . "</td></tr>";
+                    $returnValue .= "<tr><td>Peak of listeners since start</td><td>" . $output['listener_peak'] . "</td></tr>";
         }
         if($userSettings->displayButtonListenUrl->getValue()){
-                    $returnValue .= "<tr><td>URL</td><td>" . $output['listenurl'] . "</td></tr>";                    
+                    $returnValue .= "<tr><td>URL</td><td>" . $output['listenurl'] . "</td></tr>";
         }
         if($userSettings->displayButtonMaxListeners->getValue()){
                     $returnValue .= "<tr><td>Max. allowed listeners</td><td>" . $output['max_listeners'] . "</td></tr>";
