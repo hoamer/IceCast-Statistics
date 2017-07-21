@@ -174,7 +174,7 @@ class GetIceCastStatistics extends Widget
 
     function getListeners(&$hostname,&$port,&$username,&$password,&$mountpoint)
     {
-        $fp = fopen("http://$username:$password@$hostname:$port/admin/stats","r") or die("Error reading Icecast data from $hostname.");
+        $fp = fopen("http://$username:$password@$hostname:8000/admin/stats","r") or die("Error reading Icecast data from $hostname.");
         while(!feof($fp))
         {
             $data = fread($fp, 8192);
@@ -189,37 +189,29 @@ class GetIceCastStatistics extends Widget
 
         $params = array();
         $level = array();
-        
-        foreach ($vals as $xml_elem) {
-            if ($xml_elem['type'] == 'open') {
-                if (array_key_exists('attributes',$xml_elem)) {
-                    if (!isset($level[$xml_elem['level']])){
-                        list($level[$xml_elem['level']]) = array_values($xml_elem['attributes']);
-                    }else{
-                        $level[1] = array(
-                        $xml_elem['level'] => array()
-                        );
-                        list($level[$xml_elem['level']],$extra) = array_values($xml_elem['attributes']);
-                    }
-                } else {
-                    $level[$xml_elem['level']] = $xml_elem['tag'];
-                }
-            }
-            if ($xml_elem['type'] == 'complete') {
-                $start_level = 1;
-                $php_stmt = '$params';
-                while($start_level < $xml_elem['level']) {
-                    $php_stmt .= '[$level['.$start_level.']]';
-                    $start_level++;
-                }
-                $php_stmt .= '[$xml_elem[\'tag\']] = $xml_elem[\'value\'];';
-                eval($php_stmt);
-            }
-        }
-
+	//print print_r($vals);
+foreach ($vals as $xml_elem) {
+     if ($xml_elem['type'] == 'open') {
+        if (array_key_exists('attributes',$xml_elem)) {
+            list($level[$xml_elem['level']]) = array_values($xml_elem['attributes']);
+         } else {
+             $level[$xml_elem['level']] = $xml_elem['tag'];
+         }
+     }
+     if ($xml_elem['type'] == 'complete') {
+         $start_level = 1;
+         $php_stmt = '$params';
+         while($start_level < $xml_elem['level']) {
+             $php_stmt .= '[$level['.$start_level.']]';
+             $start_level++;
+         }
+         $php_stmt .= '[$xml_elem[\'tag\']] = $xml_elem[\'value\'];';
+         eval($php_stmt);
+     }
+}
 
         $icecastParams['listeners'] = $params['ICESTATS'][$mountpoint]['LISTENERS'];
-        $icecastParams['audio_info'] = $params['ICESTATS'][$mountpoint]['AUDIO_INFO'];
+        $icecastParams['audio_info'] = $params['ICESTATS']['/stream.ogg']['AUDIO_INFO'];
         $icecastParams['bitrate'] = $params['ICESTATS'][$mountpoint]['BITRATE'];
         $icecastParams['channels'] = $params['ICESTATS'][$mountpoint]['CHANNELS'];
         $icecastParams['listener_peak'] = $params['ICESTATS'][$mountpoint]['LISTENER_PEAK'];
