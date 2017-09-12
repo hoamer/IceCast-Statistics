@@ -205,8 +205,9 @@ foreach ($vals as $xml_elem) {
              $php_stmt .= '[$level['.$start_level.']]';
              $start_level++;
          }
-         $php_stmt .= '[$xml_elem[\'tag\']] = $xml_elem[\'value\'];';
-         eval($php_stmt);
+         $php_stmt .= '[$xml_elem["tag"]] = $xml_elem["value"];';
+
+        @eval($php_stmt);
      }
 }
 
