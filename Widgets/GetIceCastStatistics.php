@@ -174,7 +174,7 @@ class GetIceCastStatistics extends Widget
 
     function getListeners(&$hostname,&$port,&$username,&$password,&$mountpoint)
     {
-        $fp = fopen("http://$username:$password@$hostname:8000/admin/stats","r") or die("Error reading Icecast data from $hostname.");
+        $fp = fopen("http://$username:$password@$hostname:$port/admin/stats","r") or die("Error reading Icecast data from $hostname.");
         while(!feof($fp))
         {
             $data = fread($fp, 8192);
@@ -212,7 +212,7 @@ foreach ($vals as $xml_elem) {
 }
 
         $icecastParams['listeners'] = $params['ICESTATS'][$mountpoint]['LISTENERS'];
-        $icecastParams['audio_info'] = $params['ICESTATS']['/stream.ogg']['AUDIO_INFO'];
+        $icecastParams['audio_info'] = $params['ICESTATS'][$mountpoint]['AUDIO_INFO'];
         $icecastParams['bitrate'] = $params['ICESTATS'][$mountpoint]['BITRATE'];
         $icecastParams['channels'] = $params['ICESTATS'][$mountpoint]['CHANNELS'];
         $icecastParams['listener_peak'] = $params['ICESTATS'][$mountpoint]['LISTENER_PEAK'];
