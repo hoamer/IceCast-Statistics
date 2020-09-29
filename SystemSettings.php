@@ -35,6 +35,7 @@ class SystemSettings extends \Piwik\Settings\Plugin\SystemSettings
 
     protected function init()
     {
+        $this->protocol = $this->createProtocolSetting();
         $this->hostname = $this->createHostSetting();
         $this->port = $this->createPortSetting();
         $this->username = $this->createUsernameSetting();
@@ -54,6 +55,16 @@ class SystemSettings extends \Piwik\Settings\Plugin\SystemSettings
         });
     }
 
+    private function createProtocolSetting()
+    {
+        $default = "https";
+
+        return $this->makeSetting('protocol', $default, FieldConfig::TYPE_STRING, function (FieldConfig $field) {
+            $field->title = 'Protocol';
+            $field->uiControl = FieldConfig::UI_CONTROL_TEXT; 
+            $field->description = 'This is the protocol used to connect to your IceCast-Server. Either http, oder https.';
+        });
+    }
 
     private function createHostSetting()
     {

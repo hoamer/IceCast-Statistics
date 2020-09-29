@@ -76,13 +76,14 @@ class GetIceCastStatistics extends Widget
         $autoRefresh  = $userSettings->autoRefresh->getValue();
         $refreshInterval  = $userSettings->refreshInterval->getValue() * 1000;
         $hostname = $systemSettings->hostname->getValue();
+        $protocol = $systemSettings->protocol->getValue();
         $port = $systemSettings->port->getValue();
         $username = $systemSettings->username->getValue();
         $password = $systemSettings->password->getValue();
         $mountpoint = $systemSettings->mountpoint->getValue();
         $output = '';
 
-        $output = $this->getListeners($hostname,$port,$username,$password,$mountpoint);
+        $output = $this->getListeners($protocol,$hostname,$port,$username,$password,$mountpoint);
         $returnValue = "<table piwik-content-table><thead><tr><th>Description</th><th>Value</th></tr></thead><tbody>";
 
         if($userSettings->displayButtonCurrentlyListeners->getValue()){
@@ -172,9 +173,9 @@ class GetIceCastStatistics extends Widget
         return $returnValue;
     }
 
-    function getListeners(&$hostname,&$port,&$username,&$password,&$mountpoint)
+    function getListeners(&$protocol,&$hostname,&$port,&$username,&$password,&$mountpoint)
     {
-        $fp = fopen("http://$username:$password@$hostname:8000/admin/stats","r") or die("Error reading Icecast data from $hostname.");
+        $fp = fopen("$protocol://$username:$password@$hostname:8000/admin/stats","r") or die("Error reading Icecast data from $hostname.");
         while(!feof($fp))
         {
             $data = fread($fp, 8192);
