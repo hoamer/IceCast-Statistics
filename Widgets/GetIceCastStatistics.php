@@ -175,7 +175,7 @@ class GetIceCastStatistics extends Widget
 
     function getListeners(&$protocol,&$hostname,&$port,&$username,&$password,&$mountpoint)
     {
-        $fp = fopen("$protocol://$username:$password@$hostname:8000/admin/stats","r") or die("Error reading Icecast data from $hostname.");
+        $fp = fopen("$protocol://$username:$password@$hostname:$port/admin/stats","r") or die("Error reading Icecast data from $hostname.");
         while(!feof($fp))
         {
             $data = fread($fp, 8192);
